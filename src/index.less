@@ -1,0 +1,164 @@
+/* style rule explanation
+------------------------------------------------------
+f-:功能类，单属性
+z-:状态类，可供js调用
+u-:小型组件
+m-:中大型模块
+n-:单页命名空间
+s-:背景调用
+g-:布局
+c-:兼容封装
+------------------------------------------------------ */
+
+/* Reset */
+
+/* ------------------------------------------------------ */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+input,
+header,
+menu,
+section,
+figure,
+figcaption,
+article,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+img,
+iframe,
+button,
+input {
+    border: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-family:
+        'HanHei SC',
+        'PingFang SC',
+        'Helvetica Neue',
+        'Helvetica',
+        sans-serif;
+    line-height: 1.4;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+textarea,
+select,
+input,
+button {
+    font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+em,
+i {
+    text-align: left;
+    font-style: normal;
+}
+
+li,
+i {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+i svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    line-height: 0;
+    fill: currentColor;
+}
+
+/* Media */
+
+/* ----------------------------------------------------- */
+
+@media (min-width: 600px) {
+    html {
+        font-size: 60px;
+    }
+
+    body {
+        font-size: 17px;
+    }
+}
+
+.route-nav {
+    margin: 10px 40px;
+
+    .route-item {
+        text-align: left;
+        padding: 8px 0;
+    }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

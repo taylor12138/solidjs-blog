@@ -1,25 +1,15 @@
 import type { Component } from 'solid-js';
 
 import logo from './logo.svg';
-import styles from './App.module.css';
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div class='w-[100%] flex items-center justify-center'>
+        <div class='nav flex items-center h-[40px] w-[400px] justify-around'>
+            <div>主页</div>
+            <div>博客</div>
+            <div>请联系我</div>
+        </div>
     </div>
   );
 };
