@@ -1,17 +1,27 @@
-import type { Component } from 'solid-js';
+import { createSignal, type Component } from 'solid-js';
+import cx from 'classnames';
+import  './App.less'
 
 import logo from './logo.svg';
 
+const tabs = ['主页', '博客', '请联系我'];
+
 const App: Component = () => {
-  return (
-    <div class='w-[100%] flex items-center justify-center'>
-        <div class='nav flex items-center h-[40px] w-[400px] justify-around'>
-            <div>主页</div>
-            <div>博客</div>
-            <div>请联系我</div>
+    const [tab, setTab] = createSignal<number>(0);
+
+    return (
+        <div class='w-[100%] flex items-center bg-black text-white p-[0_10px_0_50px]'>
+            <img src={logo} class='logo w-[40px] h-[40px] mr-[7px]' alt="logo" />
+            <div class='font-bold'>HelloのBlog</div>
+            <div class='nav flex items-center h-[60px] w-[300px] justify-around'>
+                {tabs?.map((item, index: number) => {
+                    return (
+                        <div class={cx('item', tab() === index && 'active')} onclick={() => setTab(index)}>{item}</div>
+                    )
+                })}
+            </div>
         </div>
-    </div>
-  );
+    );
 };
 
 export default App;
