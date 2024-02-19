@@ -9,14 +9,14 @@ export default defineConfig({
     Uncomment the following line to enable solid-devtools.
     For more info see https://github.com/thetarnav/solid-devtools/tree/main/packages/extension#readme
     */
-    // devtools(),
-    solidPlugin(),
+        // devtools(),
+        solidPlugin(),
     ],
     server: {
-    port: 3000,
+        port: 3000,
     },
     build: {
-    target: 'esnext',
-    outDir: 'docs',
+        target: 'esnext',
+        outDir: 'docs',
     },
 });

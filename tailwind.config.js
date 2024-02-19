@@ -6,6 +6,10 @@ export default {
     ],
     theme: {
       extend: {},
+      spacing: Array.from({ length: 1000 }).reduce((map, _, index) => {
+        map[index] = `${index}px`;
+        return map;
+    }, {}),
     },
     plugins: [],
   }
