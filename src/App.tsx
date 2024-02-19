@@ -1,4 +1,4 @@
-import { createSignal, type Component, lazy } from 'solid-js';
+import { createSignal, type Component, lazy, onMount } from 'solid-js';
 import cx from 'classnames';
 import  './App.less'
 
@@ -21,6 +21,16 @@ const tabs = [
 
 const App: Component = () => {
     const [tab, setTab] = createSignal<number>(0);
+    const [videoFlag, setVideoFlag] = createSignal(false)
+    let videoRef:any;
+
+    onMount(() => {
+        videoRef?.addEventListener('ended', function () { //加载数据
+            //视频播放结束
+            console.log(videoRef, 'ended');
+            setVideoFlag(true)
+        });
+    });
 
     return (
         <div class='relative'>
@@ -36,7 +46,14 @@ const App: Component = () => {
                 </div>
             </div>
             <div class='w-[100%] absolute top-60'>
-                <video src="https://asia.sega.com/p3r/cn/resources/img/top/fv_movie1_bef3ec38c6b4ba869207fc85cf95bc78.mp4" autoplay muted></video>
+                <video src="https://asia.sega.com/p3r/cn/resources/img/top/fv_movie1_bef3ec38c6b4ba869207fc85cf95bc78.mp4" 
+                    autoplay muted ref={videoRef} class={cx(videoFlag() && 'opacity-0')}
+                />
+            </div>
+            <div class='w-[100%] absolute top-60'>
+                <video src="https://asia.sega.com/p3r/cn/resources/img/top/fv_movie2_1aaf21a0de60678450744da0dbaf9ef4.mp4" 
+                    autoplay muted loop class={cx('opacity-0', videoFlag() && 'opacity-100')} 
+                />
             </div>
             <div>
                 {/* @ts-ignore */}
